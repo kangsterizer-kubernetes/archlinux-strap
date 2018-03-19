@@ -13,23 +13,16 @@ RUN pacman-key --init && \
 		 dhcpcd \
 		 iproute2 \
 		 jfsutils \
-		 linux \
 		 lvm2 \
-		 man-db \
-		 man-pages \
 		 mdadm \
 		 nano \
-		 netctl \
-		 openresolv \
 		 pciutils \
 		 pcmciautils \
 		 reiserfsprogs \
-		 s-nail \
 		 systemd-sysvcompat \
 		 usbutils \
 		 xfsprogs && \
 	rm -rf \
-		/usr/share/man/* \
 		/var/cache/pacman/pkg/* \
 		/var/lib/pacman/sync/* \
 		/etc/pacman.d/mirrorlist.pacnew \
