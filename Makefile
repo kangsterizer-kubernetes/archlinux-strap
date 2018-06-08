@@ -1,4 +1,4 @@
-RELDATE    := 2018.03.01
+RELDATE    := $(shell date +'%Y.%m.01')
 RELEASE    := archlinux-bootstrap-$(RELDATE)-x86_64.tar.gz
 URI        := https://mirrors.kernel.org/archlinux/iso/latest/$(RELEASE)
 PGPGURI    := $(URI).sig
