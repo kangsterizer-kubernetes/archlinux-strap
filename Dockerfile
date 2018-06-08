@@ -6,7 +6,7 @@ COPY mirrorlist /etc/pacman.d
 # Update archlinux base and remove hardware-specific packages and other cruft
 RUN pacman-key --init && \
 	pacman-key --populate archlinux && \
-	pacman --noconfirm -Syu --needed base vim && \
+	pacman --noconfirm -Syu --needed base vim pacman-contrib && \
 	pacman --noconfirm -Rsc \
 		 cryptsetup \
 		 device-mapper \
