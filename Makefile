@@ -24,6 +24,11 @@ download: $(RELEASE)
 $(RELEASE):
 	curl -# -L -O $(URI)
 
+hub:
+	docker login
+	docker tag archlinux:latest kangsterizer/archlinux-strap
+	docker push kangsterizer/archlinux-strap
+
 clean:
 	rm $(RELEASE) $(RELEASE).sig
 	rm -rf archroot
