@@ -3,12 +3,13 @@ RELEASE    := archlinux-bootstrap-$(RELDATE)-x86_64.tar.gz
 URI        := https://mirrors.kernel.org/archlinux/iso/latest/$(RELEASE)
 PGPGURI    := $(URI).sig
 TRUSTEDKEY := 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
+CACHE      :=  --no-cache
 
 all: download verify unpack build
 
 build: Dockerfile
 	@echo Building archlinux version: $(RELDATE)
-	docker build -t archlinux:latest .
+	docker build $(CACHE) -t archlinux:latest .
 
 unpack: archroot
 archroot:
